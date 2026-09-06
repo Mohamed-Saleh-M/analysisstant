@@ -111,6 +111,7 @@ Ideas that build naturally on the existing data pipeline; none of these exist ye
 
 - **Interactive charts** – the dashboard currently shows tables and summary numbers; charting the collected closing data (price trends, comparisons between companies) would make the analysis-oriented use case more direct.
 - **Session-based authentication** – replacing the in-memory login flag with proper Flask sessions would make the app multi-user and production-ready (addresses the limitation below).
+- **REST API layer** – exposing the stored NSE data through an API would let other tools and applications consume it programmatically, decoupling data access from the web UI.
 - **Historical analytics / prediction** – the accumulated `nse_script_closing_prs_data` history is a ready basis for trend analysis or prediction workflows on top of the stored data.
 - **More robust ingestion** – the automation script could be hardened with Pandas-based cleaning, retries, and container/CI scheduling for more reliable daily runs.
 
