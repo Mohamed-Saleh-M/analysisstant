@@ -105,6 +105,15 @@ analysisstant/
 | `nse_script_closing_prs_data` | Processed closing data linked to company |
 | `users`                     | Registered user accounts                 |
 
+## Possible future improvements
+
+Ideas that build naturally on the existing data pipeline; none of these exist yet:
+
+- **Interactive charts** – the dashboard currently shows tables and summary numbers; charting the collected closing data (price trends, comparisons between companies) would make the analysis-oriented use case more direct.
+- **Session-based authentication** – replacing the in-memory login flag with proper Flask sessions would make the app multi-user and production-ready (addresses the limitation below).
+- **Historical analytics / prediction** – the accumulated `nse_script_closing_prs_data` history is a ready basis for trend analysis or prediction workflows on top of the stored data.
+- **More robust ingestion** – the automation script could be hardened with Pandas-based cleaning, retries, and container/CI scheduling for more reliable daily runs.
+
 ## Known limitations
 
 - Sign-in state is held in a module-level variable, so the app is not safe for multi-user or production deployment; restarting the server logs all users out.
